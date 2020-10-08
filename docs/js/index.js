@@ -9,8 +9,8 @@ const startVideo = async video => {
   };
   const loadModels = async () => {
     await Promise.all([
-      faceapi.nets.tinyFaceDetector.loadFromUri(`/js/lib/models`),
-      faceapi.nets.faceExpressionNet.loadFromUri(`/js/lib/models`)
+      faceapi.nets.tinyFaceDetector.loadFromUri(`${gitPagesPath}/js/lib/models`),
+      faceapi.nets.faceExpressionNet.loadFromUri(`${gitPagesPath}/js/lib/models`)
     ]);
   };
   
@@ -23,18 +23,18 @@ const startVideo = async video => {
   const createExpressionImageMap = () => {
     const map = new Map();
     // TODO: add Image
-    map.set("neutral", createImageElm(`/images/jason_neutral.png`));
-    map.set("happy", createImageElm(`/images/jason_happy.png`));
-    map.set("sad", createImageElm(`/images/jason_neutral.png`));
-    map.set("angry", createImageElm(`/images/jason_angry.png`));
-    map.set("fearful", createImageElm(`/images/jason_neutral.png`));
+    map.set("neutral", createImageElm(`${gitPagesPath}/images/jason_neutral.png`));
+    map.set("happy", createImageElm(`${gitPagesPath}/images/jason_happy.png`));
+    map.set("sad", createImageElm(`${gitPagesPath}/images/jason_neutral.png`));
+    map.set("angry", createImageElm(`${gitPagesPath}/images/jason_angry.png`));
+    map.set("fearful", createImageElm(`${gitPagesPath}/images/jason_neutral.png`));
     map.set(
       "disgusted",
-      createImageElm(`/images/jason_neutral.png`)
+      createImageElm(`${gitPagesPath}/images/jason_neutral.png`)
     );
     map.set(
       "surprised",
-      createImageElm(`/images/jason_neutral.png`)
+      createImageElm(`${gitPagesPath}/images/jason_neutral.png`)
     );
     return map;
   };
